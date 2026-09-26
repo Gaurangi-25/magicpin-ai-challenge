@@ -32,6 +32,13 @@ from storage import storage
 
 app = FastAPI(title="magicpin Vera AI Assistant", version="1.0.0")
 
+@app.get("/")
+async def root():
+    return {
+        "status": "ok",
+        "service": "Vera AI",
+        "message": "Magicpin AI Challenge bot is running."
+    }
 
 # Public compose function matching challenge-brief §7.1
 def compose(
